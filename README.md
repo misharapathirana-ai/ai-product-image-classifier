@@ -6,7 +6,7 @@ The project uses **MobileNetV2 transfer learning** with TensorFlow/Keras and pro
 
 ##  Live Demo
 
-**Coming soon**
+https://ai-appuct-image-classifier.streamlit.app/
 
 ##  Features
 
