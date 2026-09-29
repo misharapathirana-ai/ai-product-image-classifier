@@ -5,9 +5,7 @@ from PIL import Image
 from pathlib import Path
 
 
-# --------------------------------------------------
 # PAGE CONFIG
-# --------------------------------------------------
 
 st.set_page_config(
     page_title="AI Product Image Classifier",
@@ -16,9 +14,8 @@ st.set_page_config(
 )
 
 
-# --------------------------------------------------
 # MODEL CONFIGURATION
-# --------------------------------------------------
+
 
 MODEL_PATH = Path("models/product_classifier_v2_best.keras")
 
@@ -38,9 +35,8 @@ CLASS_NAMES = [
 ]
 
 
-# --------------------------------------------------
 # LOAD MODEL
-# --------------------------------------------------
+
 
 @st.cache_resource
 def load_model():
@@ -50,9 +46,9 @@ def load_model():
 model = load_model()
 
 
-# --------------------------------------------------
+
 # PREDICTION FUNCTION
-# --------------------------------------------------
+
 
 def predict_image(image, model, top_k=3):
 
@@ -79,9 +75,9 @@ def predict_image(image, model, top_k=3):
     return results
 
 
-# --------------------------------------------------
+
 # MAIN INTERFACE
-# --------------------------------------------------
+
 
 st.title(" AI Product Image Classifier")
 
@@ -122,9 +118,9 @@ if uploaded_file is not None:
             top_k=3
         )
 
-    # --------------------------------------------------
+  
     # TOP PREDICTION
-    # --------------------------------------------------
+    
 
     top_result = results[0]
 
@@ -137,9 +133,9 @@ if uploaded_file is not None:
 
     st.divider()
 
-    # --------------------------------------------------
+   
     # TOP 3
-    # --------------------------------------------------
+  
 
     st.subheader("Top 3 Predictions")
 
@@ -155,9 +151,9 @@ if uploaded_file is not None:
         st.progress(confidence)
 
 
-# --------------------------------------------------
+
 # SIDEBAR
-# --------------------------------------------------
+
 
 with st.sidebar:
 
